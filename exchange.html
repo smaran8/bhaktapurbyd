@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>BYD Bhaktapur</title>
+</head>
+<header class="text-gray-600 body-font fixed top-0 left-0 right-0 z-10 bg-white shadow">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <a href="index.html" class="ml-3 text-xl" style="text-decoration: none; color: inherit;">
+                BYD Bhaktapur
+            </a>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" href="index.html">Vehicle</a>
+            <a class="mr-5 hover:text-gray-900" href="gallery.html">Gallery</a>
+            <a class="mr-5 hover:text-gray-900" href="charging.html">Charging</a>
+            <a class="mr-5 hover:text-gray-900" href="aboutus.html">About Us</a>
+            
+        </nav>
+    </div>
+</header>
+<body>
+ 
+
+
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+      <div class="text-center lg:w-2/3 w-full mb-10">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Upload Vehicle Details</h1>
+        <p class="mb-8 leading-relaxed">Please fill in the details of the vehicle and upload pictures of vehicle along with blue book pictures.</p>
+      </div>
+  
+      <form class="lg:w-2/3 w-full">
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="ownerName">
+            Owner Name
+          </label>
+          <input
+            type="text"
+            id="ownerName"
+            placeholder="Enter owner's name"
+            class="bg-white border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
+            required
+          />
+        </div>
+  
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="contactNumber">
+            Contact Number
+          </label>
+          <input
+            type="tel"
+            id="contactNumber"
+            placeholder="Enter contact number"
+            class="bg-white border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
+            required
+          />
+        </div>
+  
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+            Address
+          </label>
+          <input
+            type="text"
+            id="address"
+            placeholder="Enter address"
+            class="bg-white border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
+            required
+          />
+        </div>
+  
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="vehicleImages">
+            Upload Vehicle Pictures (Max: 8)
+          </label>
+          <input
+            type="file"
+            id="vehicleImages"
+            accept="image/*"
+            multiple
+            class="bg-white border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
+            onchange="handleFileUpload(event)"
+            required
+          />
+          <p class="text-gray-500 text-xs mt-1">You can select up to 8 images.</p>
+        </div>
+  
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <script>
+    function handleFileUpload(event) {
+      const files = event.target.files;
+      if (files.length > 6) {
+        alert("You can only upload a maximum of 6 images.");
+        event.target.value = ""; // Reset the input
+      }
+    }
+  </script>
+
+
+
+
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <img src="https://via.placeholder.com/40" alt="BYD Logo" class="w-10 h-10 bg-indigo-500 rounded-full">
+          <span class="ml-3 text-xl">BYD Bhaktapur</span>
+        </a>
+        <p class="mt-2 text-sm text-gray-500">Your trusted partner for electric vehicles.</p>
+        <p class="mt-2 text-sm text-gray-500">
+          <a href="https://goo.gl/maps/your-location" target="_blank" class="text-indigo-500">123 Electric Ave, Bhaktapur, Nepal</a>
+        </p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">VEHICLES</h2>
+          <nav class="list-none mb-10">
+            <li><a href="superior.html" class="text-gray-600 hover:text-gray-800">Atto 3 Superior</a></li>
+            <li><a href="advance.html" class="text-gray-600 hover:text-gray-800">Atto 3 Advance</a></li>
+            <li><a href="dolphin.html" class="text-gray-600 hover:text-gray-800">Dolphin</a></li>
+            <li><a href="seal.html" class="text-gray-600 hover:text-gray-800">Seal</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SERVICES</h2>
+          <nav class="list-none mb-10">
+            <li><a href="/service-maintenance" class="text-gray-600 hover:text-gray-800">Service & Maintenance</a></li>
+            <li><a href="testdrive.html" class="text-gray-600 hover:text-gray-800">Test Drive Booking</a></li>
+            <li><a href="/financing-options" class="text-gray-600 hover:text-gray-800">Financing Options</a></li>
+            <li><a href="exchange.html" class="text-gray-600 hover:text-gray-800">Exchange Offers</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CONNECT</h2>
+          <nav class="list-none mb-10">
+            <li><a href="contactus.html" class="text-gray-600 hover:text-gray-800">Contact Us</a></li>
+            <li><a href="/newsletter" class="text-gray-600 hover:text-gray-800">Newsletter Signup</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SOCIAL MEDIA</h2>
+          <nav class="list-none mb-10">
+            <li><a href="https://www.facebook.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Instagram</a></li>
+            <li><a href="https://twitter.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/bydbhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">LinkedIn</a></li>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left">© 2024 BYD Bhaktapur —
+          <a href="https://cimex.com.np/" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">Visit our website</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="text-gray-500" href="https://www.facebook.com/BYDBhaktapur" target="_blank">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://twitter.com/BYDBhaktapur" target="_blank">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://www.instagram.com/BYDBhaktapur" target="_blank">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://www.linkedin.com/company/bydbhaktapur" target="_blank">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  
+
+  
+  </body>
+  </html>

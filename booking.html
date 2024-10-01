@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>BYD Bhaktapur</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font fixed top-0 left-0 right-0 z-10 bg-white shadow">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <a href="index.html" class="ml-3 text-xl" style="text-decoration: none; color: inherit;">
+                    BYD Bhaktapur
+                </a>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900" href="index.html">Vehicle</a>
+                <a class="mr-5 hover:text-gray-900" href="gallery.html">Gallery</a>
+                <a class="mr-5 hover:text-gray-900" href="charging.html">Charging</a>
+                <a class="mr-5 hover:text-gray-900" href="aboutus.html">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+<!-- Include the Fonepay script -->
+<script src="https://js.fonepay.com/v1.js"></script>
+
+<section class="text-gray-600 body-font overflow-hidden">
+  <div class="container px-5 py-24 mx-auto">
+    <h2 class="text-3xl title-font font-medium text-gray-900 mb-8 text-center">Book Your BYD Seal Ato3 Superior</h2>
+    <div class="lg:w-2/3 mx-auto flex flex-wrap">
+      <img alt="BYD Seal Ato3 Superior" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400/000/fff&text=BYD+Seal+Ato3+Superior">
+      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">BYD Seal Ato3 Superior</h1>
+        <p class="leading-relaxed">The BYD Seal Ato3 Superior is designed for comfort and performance, featuring advanced technology and luxurious interiors.</p>
+        <span class="title-font font-medium text-2xl text-gray-900">$45,000</span>
+        
+        <form id="bookingForm" class="mt-4">
+          <div class="flex flex-col mb-4">
+            <label class="mb-2">Select Color:</label>
+            <select class="rounded border border-gray-300 py-2 focus:outline-none" id="colorSelect">
+              <option value="Red">Red</option>
+              <option value="Blue">Blue</option>
+              <option value="Green">Green</option>
+              <option value="Yellow">Yellow</option>
+            </select>
+          </div>
+          <button type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" onclick="processPayment()">Book Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function processPayment() {
+    const selectedColor = document.getElementById("colorSelect").value;
+    const amount = 45000; // Assuming $45,000 for the vehicle
+
+    // Payment request details
+    const paymentDetails = {
+        amount: amount,
+        currency: "NPR",
+        description: `Booking for BYD Seal Ato3 Superior - Color: ${selectedColor}`,
+        redirectUrl: "https://yourwebsite.com/payment-success", // URL to redirect after payment
+        callbackUrl: "https://yourwebsite.com/payment-callback" // URL for the payment gateway to send callbacks
+    };
+
+    // Fonepay payment request
+    Fonepay.startPayment(paymentDetails, function(response) {
+        if (response.status === "success") {
+            alert("Payment successful! Booking confirmed.");
+            // Optionally, redirect to a success page
+            window.location.href = "https://yourwebsite.com/booking-success";
+        } else {
+            alert("Payment failed! Please try again.");
+        }
+    });
+}
+</script>
+
+  </body>
+  </html>

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>BYD Bhaktapur</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font fixed top-0 left-0 right-0 z-10 bg-white shadow">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <a href="index.html" class="ml-3 text-xl" style="text-decoration: none; color: inherit;">
+                    BYD Bhaktapur
+                </a>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900" href="index.html">Vehicle</a>
+                <a class="mr-5 hover:text-gray-900" href="gallery.html">Gallery</a>
+                <a class="mr-5 hover:text-gray-900" href="charging.html">Charging</a>
+                <a class="mr-5 hover:text-gray-900" href="aboutus.html">About Us</a>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .more-info {
+            border: 1px solid #3498db;
+            padding: 15px;
+            background-color: #e7f3fe;
+            margin-top: 30px;
+            text-align: center;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid #dddddd;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    
+</head>
+<body>
+
+    <h2>Charging Stations Inside Kathmandu Valley</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Charging Station Name</th>
+                <th>Location</th>
+                <th>Type of Charger</th>
+                <th>Number of Ports</th>
+                <th>Contact Number</th>
+                <th>Operating Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.7172, 85.3240, 'Bhatbhateni Supermarket Charging Station')">Bhatbhateni Supermarket Charging Station</a></td>
+                <td>Bhatbhateni, Kathmandu</td>
+                <td>Fast Charger (DC)</td>
+                <td>4</td>
+                <td>+977-9876543210</td>
+                <td>24/7</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.7158, 85.3248, 'Durbar Marg EV Station')">Durbar Marg EV Station</a></td>
+                <td>Durbar Marg, Kathmandu</td>
+                <td>Slow Charger (AC)</td>
+                <td>2</td>
+                <td>+977-9876543211</td>
+                <td>9 AM - 9 PM</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.6719, 85.3245, 'Patan EV Charging Hub')">Patan EV Charging Hub</a></td>
+                <td>Patan, Lalitpur</td>
+                <td>Fast Charger (DC)</td>
+                <td>3</td>
+                <td>+977-9876543212</td>
+                <td>24/7</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.8753, 85.4297, 'Bhaktapur EV Station')">Bhaktapur EV Station</a></td>
+                <td>Bhaktapur Durbar Square</td>
+                <td>Fast Charger (DC)</td>
+                <td>2</td>
+                <td>+977-9876543213</td>
+                <td>8 AM - 8 PM</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.7160, 85.3204, 'Thamel EV Charger')">Thamel EV Charger</a></td>
+                <td>Thamel, Kathmandu</td>
+                <td>Slow Charger (AC)</td>
+                <td>2</td>
+                <td>+977-9876543214</td>
+                <td>10 AM - 10 PM</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Charging Stations Outside Kathmandu Valley</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Charging Station Name</th>
+                <th>Location</th>
+                <th>Type of Charger</th>
+                <th>Number of Ports</th>
+                <th>Contact Number</th>
+                <th>Operating Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.5153, 84.5035, 'Chitwan Highway EV Station')">Chitwan Highway EV Station</a></td>
+                <td>Bharatpur, Chitwan</td>
+                <td>Fast Charger (DC)</td>
+                <td>3</td>
+                <td>+977-9876543215</td>
+                <td>24/7</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(28.2096, 83.9856, 'Pokhara EV Charging Hub')">Pokhara EV Charging Hub</a></td>
+                <td>Lakeside, Pokhara</td>
+                <td>Slow Charger (AC)</td>
+                <td>4</td>
+                <td>+977-9876543216</td>
+                <td>8 AM - 8 PM</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.4170, 80.0257, 'Hetauda EV Station')">Hetauda EV Station</a></td>
+                <td>Hetauda, Makwanpur</td>
+                <td>Fast Charger (DC)</td>
+                <td>2</td>
+                <td>+977-9876543217</td>
+                <td>6 AM - 10 PM</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.6505, 85.5476, 'Dhulikhel Highway Charger')">Dhulikhel Highway Charger</a></td>
+                <td>Dhulikhel, Kavre</td>
+                <td>Fast Charger (DC)</td>
+                <td>2</td>
+                <td>+977-9876543218</td>
+                <td>24/7</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="updateMap(27.5133, 83.6680, 'Lumbini EV Charging Station')">Lumbini EV Charging Station</a></td>
+                <td>Lumbini, Rupandehi</td>
+                <td>Slow Charger (AC)</td>
+                <td>3</td>
+                <td>+977-9876543219</td>
+                <td>7 AM - 9 PM</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="map"></div>
+
+   
+
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([27.7172, 85.3240], 8); // Default view at Kathmandu Valley
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Marker for selected charging station
+        let marker;
+        let userMarker;
+        let userLocationSet = false; // Flag to check if user location is set
+
+        // Get user location once and set the marker
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+
+                // Add marker for user location
+                userMarker = L.marker([userLat, userLng]).addTo(map).bindPopup("Your Location").openPopup();
+                map.setView([userLat, userLng], 13); // Center the map on user location
+                userLocationSet = true; // Mark the user location as set
+            });
+        }
+
+        // Update map to show the selected charging station
+        function updateMap(lat, lng, name) {
+            if (marker) {
+                map.removeLayer(marker); // Remove existing marker if present
+            }
+
+            marker = L.marker([lat, lng]).addTo(map).bindPopup(name).openPopup();
+            map.setView([lat, lng], 13); // Center the map on the selected station
+
+            // If user location is set, keep user marker on the map
+            if (userLocationSet && userMarker) {
+                map.addLayer(userMarker);
+            }
+        }
+    </script>
+
+    <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <img src="https://via.placeholder.com/40" alt="BYD Logo" class="w-10 h-10 bg-indigo-500 rounded-full">
+              <span class="ml-3 text-xl">BYD Bhaktapur</span>
+            </a>
+            <p class="mt-2 text-sm text-gray-500">Your trusted partner for electric vehicles.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              <a href="https://goo.gl/maps/your-location" target="_blank" class="text-indigo-500">123 Electric Ave, Bhaktapur, Nepal</a>
+            </p>
+          </div>
+          <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">VEHICLES</h2>
+              <nav class="list-none mb-10">
+                <li><a href="superior.html" class="text-gray-600 hover:text-gray-800">Atto 3 Superior</a></li>
+                <li><a href="advance.html" class="text-gray-600 hover:text-gray-800">Atto 3 Advance</a></li>
+                <li><a href="dolphin.html" class="text-gray-600 hover:text-gray-800">Dolphin</a></li>
+                <li><a href="seal.html" class="text-gray-600 hover:text-gray-800">Seal</a></li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SERVICES</h2>
+              <nav class="list-none mb-10">
+                <li><a href="/service-maintenance" class="text-gray-600 hover:text-gray-800">Service & Maintenance</a></li>
+                <li><a href="/test-drive" class="text-gray-600 hover:text-gray-800">Test Drive Booking</a></li>
+                <li><a href="/financing-options" class="text-gray-600 hover:text-gray-800">Financing Options</a></li>
+                <li><a href="/trade-in" class="text-gray-600 hover:text-gray-800">Trade-In Offers</a></li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CONNECT</h2>
+              <nav class="list-none mb-10">
+                <li><a href="/contact-us" class="text-gray-600 hover:text-gray-800">Contact Us</a></li>
+                
+                <li><a href="exchange.html" class="text-gray-600 hover:text-gray-800">Exchange Offers</a></li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SOCIAL MEDIA</h2>
+              <nav class="list-none mb-10">
+                <li><a href="https://www.facebook.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Instagram</a></li>
+                <li><a href="https://twitter.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/company/bydbhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">LinkedIn</a></li>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-100">
+          <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p class="text-gray-500 text-sm text-center sm:text-left">© 2024 BYD Bhaktapur —
+              <a href="https://www.byd.com" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">Visit our website</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+              <a class="text-gray-500" href="https://www.facebook.com/BYDBhaktapur" target="_blank">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500" href="https://twitter.com/BYDBhaktapur" target="_blank">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500" href="https://www.instagram.com/BYDBhaktapur" target="_blank">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500" href="https://www.linkedin.com/company/bydbhaktapur" target="_blank">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </footer>
+
+</body>
+</html>

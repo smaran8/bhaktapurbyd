@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+
+    <header class="text-gray-600 body-font fixed top-0 left-0 right-0 z-10 bg-white shadow">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <a href="index.html" class="ml-3 text-xl" style="text-decoration: none; color: inherit;">
+                    BYD Bhaktapur
+                </a>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900" href="index.html">Vehicle</a>
+                <a class="mr-5 hover:text-gray-900" href="gallery.html">Gallery</a>
+                <a class="mr-5 hover:text-gray-900" href="charging.html">Charging</a>
+                <a class="mr-5 hover:text-gray-900" href="aboutus.html">About Us</a>
+            </nav>
+        </div>
+    </header>
+     
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Add a filter to make the map appear darker */
+    .dark-map iframe {
+      filter: brightness(50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-wrap">
+      
+      <!-- Map on the left -->
+      
+      <div class="lg:w-1/2 w-full dark-map">
+        <h1>Test-Drive Routes</h1>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.974679418983!2d85.42102137436473!3d27.67704648271229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bbf80ff8c91%3A0x832d20ec3055dc2a!2sBYD%20Showroom%2C%20Sirjanagar%2C%20Bhaktapur!5e0!3m2!1sen!2snp!4v1695746123456!5m2!1sen!2snp"
+          width="100%" 
+          height="500px" 
+          frameborder="0" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- Form on the right -->
+      <div class="lg:w-1/2 w-full bg-gray-100 bg-opacity-80 rounded-lg p-8 flex flex-col md:ml-auto mt-10 lg:mt-0">
+        <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Test Drive Form</h2>
+        <div class="relative mb-4">
+          <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
+          <input type="text" id="full-name" name="full-name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+        </div>
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+        </div>
+        <div class="relative mb-4">
+          <label for="phone" class="leading-7 text-sm text-gray-600">Contact Number</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="123-456-7890" required>
+          <small class="text-gray-500">Format: 123-456-7890</small>
+        </div>
+        <div class="relative mb-4">
+          <label for="address" class="leading-7 text-sm text-gray-600">Address</label>
+          <input type="text" id="address" name="address" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+        </div>
+        <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+        <p class="text-xs text-gray-500 mt-3">Sign up to explore BYD Bhaktapur Test Drive routes.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <img src="https://via.placeholder.com/40" alt="BYD Logo" class="w-10 h-10 bg-indigo-500 rounded-full">
+          <span class="ml-3 text-xl">BYD Bhaktapur</span>
+        </a>
+        <p class="mt-2 text-sm text-gray-500">Your trusted partner for electric vehicles.</p>
+        <p class="mt-2 text-sm text-gray-500">
+          <a href="https://goo.gl/maps/your-location" target="_blank" class="text-indigo-500">123 Electric Ave, Bhaktapur, Nepal</a>
+        </p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">VEHICLES</h2>
+          <nav class="list-none mb-10">
+            <li><a href="superior.html" class="text-gray-600 hover:text-gray-800">Atto 3 Superior</a></li>
+            <li><a href="advance.html" class="text-gray-600 hover:text-gray-800">Atto 3 Advance</a></li>
+            <li><a href="dolphin.html" class="text-gray-600 hover:text-gray-800">Dolphin</a></li>
+            <li><a href="seal.html" class="text-gray-600 hover:text-gray-800">Seal</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SERVICES</h2>
+          <nav class="list-none mb-10">
+            <li><a href="/service-maintenance" class="text-gray-600 hover:text-gray-800">Service & Maintenance</a></li>
+            <li><a href="testdrive.html" class="text-gray-600 hover:text-gray-800">Test Drive Booking</a></li>
+            <li><a href="/financing-options" class="text-gray-600 hover:text-gray-800">Financing Options</a></li>
+            <li><a href="/trade-in" class="text-gray-600 hover:text-gray-800">Exchange Offers</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CONNECT</h2>
+          <nav class="list-none mb-10">
+            <li><a href="contactus.html" class="text-gray-600 hover:text-gray-800">Contact Us</a></li>
+            <li><a href="/newsletter" class="text-gray-600 hover:text-gray-800">Newsletter Signup</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SOCIAL MEDIA</h2>
+          <nav class="list-none mb-10">
+            <li><a href="https://www.facebook.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Instagram</a></li>
+            <li><a href="https://twitter.com/BYDBhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/bydbhaktapur" class="text-gray-600 hover:text-gray-800" target="_blank">LinkedIn</a></li>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left">© 2024 BYD Bhaktapur —
+          <a href="https://cimex.com.np/" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">Visit our website</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="text-gray-500" href="https://www.facebook.com/BYDBhaktapur" target="_blank">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://twitter.com/BYDBhaktapur" target="_blank">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://www.instagram.com/BYDBhaktapur" target="_blank">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://www.linkedin.com/company/bydbhaktapur" target="_blank">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>
